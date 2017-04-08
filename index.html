@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        .wrapper img {
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <img src="http://i2.muimg.com/567571/7dea2a43703535ab.png" alt="" data-src="http://pic.qiantucdn.com/58pic/20/12/21/00f58PICmYd_1024.jpg">
+    </div>
+    <div class="wrapper">
+        <img src="http://i2.muimg.com/567571/7dea2a43703535ab.png" alt="" data-src="http://img06.tooopen.com/images/20160916/tooopen_sy_178957232691.jpg">
+    </div>
+    <div class="wrapper">
+        <img src="http://i2.muimg.com/567571/7dea2a43703535ab.png" alt="" data-src="http://t2.27270.com/uploads/tu/20150413/zadwks50nev.jpg">
+    </div>
+    <script>
+        var img = document.querySelectorAll('.wrapper img')
+
+        for (var i = 0; i < img.length; i++) {
+            let thisImg = img[i]
+            let dataSrc = thisImg.getAttribute('data-src')
+            let tempImg = new Image()
+
+            tempImg.src = dataSrc
+            tempImg.onload = function() {
+                thisImg.src = dataSrc
+            }
+        }
+    </script>
+</body>
+
+</html>
